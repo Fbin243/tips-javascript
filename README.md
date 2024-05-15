@@ -1,2 +1,2 @@
 # tips-javascript
-Here is where I learn something deeply in back-end career path.
+This is where I learn in-depth about the back-end career path.
