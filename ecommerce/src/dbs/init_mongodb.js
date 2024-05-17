@@ -2,9 +2,9 @@
 
 const mongoose = require("mongoose");
 const {
-  db: { host, name, port },
+  db: { username, password, host, name, port },
 } = require("../configs/config.mongodb");
-const connectString = `mongodb://${host}:${port}/${name}`;
+const connectString = `mongodb+srv://${username}:${password}@${host}/${name}`;
 const { countConnect } = require("../helpers/check_connect");
 
 console.log("Connect String: ", connectString);

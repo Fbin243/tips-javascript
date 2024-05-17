@@ -10,6 +10,8 @@ const app = express();
 app.use(morgan("combined"));
 app.use(helmet());
 app.use(compression());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // init db
 require("./dbs/init_mongodb");
@@ -17,10 +19,6 @@ require("./dbs/init_mongodb");
 // checkOverload();
 
 // init routes
-app.get("/", (req, res) => {
-  const strCompress = "Hello World";
-  return res
-    .status(200)
-    .json({ message: "Hello World", metadata: strCompress.repeat(1000) });
-});
+app.use(require("./routes"));
+
 module.exports = app;

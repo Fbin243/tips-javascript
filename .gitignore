@@ -10,6 +10,10 @@
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+# Source code
 ecommerce/src/.env
 ecommerce/src/node_modules
+
+# OS
 .DS_Store
