@@ -4,6 +4,8 @@ const express = require("express");
 const compression = require("compression");
 const app = express();
 
+// console.log("Process: ", process.env);
+
 // init middleware
 app.use(morgan("combined"));
 app.use(helmet());
@@ -11,8 +13,8 @@ app.use(compression());
 
 // init db
 require("./dbs/init_mongodb");
-const { checkOverload } = require("./helpers/check_connect");
-checkOverload();
+// const { checkOverload } = require("./helpers/check_connect");
+// checkOverload();
 
 // init routes
 app.get("/", (req, res) => {
@@ -21,5 +23,4 @@ app.get("/", (req, res) => {
     .status(200)
     .json({ message: "Hello World", metadata: strCompress.repeat(1000) });
 });
-
 module.exports = app;

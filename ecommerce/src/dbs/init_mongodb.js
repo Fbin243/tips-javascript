@@ -1,10 +1,13 @@
 "use strict";
 
 const mongoose = require("mongoose");
-
-const connectString =
-  "mongodb+srv://oriobookwebdev:oriobook123@oriobook.aguyhnl.mongodb.net/";
+const {
+  db: { host, name, port },
+} = require("../configs/config.mongodb");
+const connectString = `mongodb://${host}:${port}/${name}`;
 const { countConnect } = require("../helpers/check_connect");
+
+console.log("Connect String: ", connectString);
 
 class Database {
   constructor() {
