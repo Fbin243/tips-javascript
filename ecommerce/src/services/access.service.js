@@ -72,11 +72,8 @@ class AccessService {
       console.log("Created token pair: ", tokens);
 
       return {
-        code: "201",
-        metadata: {
-          shop: getInfoData(["_id", "name", "email"], newShop),
-          tokens,
-        },
+        shop: getInfoData(["_id", "name", "email"], newShop),
+        tokens,
       };
     }
 

@@ -1,5 +1,4 @@
 "use strict";
-const crypto = require("crypto");
 
 const apiKeyModel = require("../models/apikey.model");
 
