@@ -16,6 +16,12 @@ const roles = {
 };
 
 class AccessService {
+  static logout = async (keyStore) => {
+    const delKey = await KeyTokenService.deleteKeyTokenById(keyStore._id);
+    console.log("Deleted key: ", delKey);
+    return delKey;
+  };
+
   static login = async ({ email, password, refreshToken = null }) => {
     // Step 1: check if email exists
     const foundShop = await findByEmail({ email });

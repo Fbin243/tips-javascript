@@ -1,5 +1,4 @@
 "use strict";
-
 const keyTokenModel = require("../models/keytoken.model");
 
 class KeyTokenService {
@@ -29,6 +28,14 @@ class KeyTokenService {
     );
 
     return tokens ? tokens.publicKey : null;
+  };
+
+  static findByUserId = async (userId) => {
+    return await keyTokenModel.findOne({ user: userId }).lean();
+  };
+
+  static deleteKeyTokenById = async (id) => {
+    return await keyTokenModel.deleteOne({ _id: id });
   };
 }
 
