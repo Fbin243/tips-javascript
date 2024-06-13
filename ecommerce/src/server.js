@@ -1,3 +1,4 @@
+console.log("Starting server.js");
 const app = require("./app");
 const {
   app: { port },

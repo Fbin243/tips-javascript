@@ -70,7 +70,7 @@ const clothingSchema = new mongoose.Schema(
 
 //Export the model
 module.exports = {
-  product: mongoose.model(DOCUMENT_NAME, userSchema),
+  product: mongoose.model(DOCUMENT_NAME, productSchema),
   electronic: mongoose.model("Electronic", electronicSchema),
   clothing: mongoose.model("Clothing", clothingSchema),
 };
